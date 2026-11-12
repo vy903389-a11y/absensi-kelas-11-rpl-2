@@ -1,1 +1,512 @@
 
+
+:root {
+    --navy: #173b63;
+    --blue: #438cc9;
+    --sky: #8ecdf5;
+    --light: #eaf7ff;
+    --white: #ffffff;
+    --text: #254563;
+    --shadow: 0 8px 25px rgba(58, 124, 173, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e5f5ff, #f8fcff, #d9efff);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* EMOJI LANGIT */
+
+.sky span {
+    position: fixed;
+    bottom: -60px;
+    z-index: 0;
+    pointer-events: none;
+    font-size: 25px;
+    opacity: 0.65;
+    animation: terbang 15s linear infinite;
+}
+
+.sky span:nth-child(1) { left: 5%; animation-delay: 0s; }
+.sky span:nth-child(2) { left: 20%; animation-delay: 3s; }
+.sky span:nth-child(3) { left: 40%; animation-delay: 6s; }
+.sky span:nth-child(4) { left: 60%; animation-delay: 2s; }
+.sky span:nth-child(5) { left: 75%; animation-delay: 5s; }
+.sky span:nth-child(6) { left: 88%; animation-delay: 8s; }
+.sky span:nth-child(7) { left: 50%; animation-delay: 10s; }
+
+@keyframes terbang {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.7; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 255px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, #183f69, #286c9f);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    box-shadow: 5px 0 25px rgba(25, 72, 112, 0.15);
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 45px;
+    letter-spacing: 1px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.sidebar nav a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    text-align: center;
+    line-height: 2;
+}
+
+.sidebar-bottom p {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.sidebar-bottom small {
+    color: #c9eaff;
+}
+
+/* KONTEN UTAMA */
+
+.main-content {
+    margin-left: 255px;
+    padding: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 27px;
+    color: var(--navy);
+}
+
+.topbar p,
+.section-heading p {
+    font-size: 13px;
+    color: #718da6;
+}
+
+.date-box {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* WELCOME */
+
+.welcome {
+    background: linear-gradient(120deg, #367db8, #83c9f2);
+    padding: 30px;
+    border-radius: 22px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    font-size: 13px;
+    color: #e7f6ff;
+}
+
+.welcome-icon {
+    font-size: 55px;
+}
+
+/* STATISTIK */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    border-bottom: 4px solid #8acaf0;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin: 12px 0 4px;
+    color: var(--navy);
+}
+
+.stat-card p {
+    font-size: 11px;
+    color: #8299ad;
+}
+
+.hadir { border-color: #3999df; }
+.sakit { border-color: #e9b45c; }
+.izin { border-color: #a58be7; }
+.alpa { border-color: #e67c8c; }
+
+/* PANEL */
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    scroll-margin-top: 20px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+/* FORM */
+
+.student-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d6e9f6;
+    border-radius: 11px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--text);
+    background: #f8fcff;
+}
+
+input:focus, select:focus {
+    border-color: #59a9e3;
+    box-shadow: 0 0 0 3px #dff2ff;
+}
+
+/* TOMBOL */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.96);
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, #347db8, #65b5e9);
+    color: white;
+    padding: 12px 17px;
+}
+
+.btn-secondary {
+    background: #e2f3ff;
+    color: #2675ae;
+    padding: 12px 17px;
+}
+
+.btn-danger {
+    background: #ffe8ed;
+    color: #d65370;
+    padding: 12px 17px;
+}
+
+/* TABEL */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+thead {
+    background: #eaf6ff;
+}
+
+th {
+    color: #356b95;
+    font-size: 12px;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #edf3f8;
+    font-size: 12px;
+}
+
+tbody tr:hover {
+    background: #f5fbff;
+}
+
+.status-select {
+    min-width: 110px;
+    padding: 8px;
+    border-radius: 9px;
+    font-size: 11px;
+}
+
+.delete-btn {
+    background: #ffe9ed;
+    color: #d94d6c;
+    padding: 8px 12px;
+    font-size: 11px;
+}
+
+/* AKSI */
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.notice {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #3987bd;
+    font-weight: 600;
+}
+
+/* REKAP */
+
+.recap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.recap-item {
+    background: linear-gradient(135deg, #edf8ff, #dcefff);
+    padding: 22px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recap-item span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.recap-item strong {
+    font-size: 28px;
+    color: #317db5;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #7695ad;
+    font-size: 12px;
+}
+
+/* RESPONSIVE HP */
+
+@media (max-width: 1100px) {
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .brand {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .sidebar nav a {
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .welcome h2 {
+        font-size: 17px;
+    }
+
+    .welcome-icon {
+        font-size: 38px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h2 {
+        font-size: 25px;
+    }
+
+    .student-form {
+        grid-template-columns: 1fr;
+    }
+
+    .recap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .actions button {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .recap-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
